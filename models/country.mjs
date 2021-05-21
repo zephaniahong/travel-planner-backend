@@ -14,7 +14,7 @@ export default function initCountryModel(sequelize, DataTypes) {
       lat: {
         type: DataTypes.INTEGER,
       },
-      long: {
+      lng: {
         type: DataTypes.INTEGER,
       },
       createdAt: {

@@ -39,7 +39,7 @@ module.exports = {
       lat: {
         type: Sequelize.INTEGER,
       },
-      long: {
+      lng: {
         type: Sequelize.INTEGER,
       },
       created_at: {
@@ -72,7 +72,7 @@ module.exports = {
       lat: {
         type: Sequelize.INTEGER,
       },
-      long: {
+      lng: {
         type: Sequelize.INTEGER,
       },
       created_at: {
