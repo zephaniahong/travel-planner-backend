@@ -2,8 +2,6 @@ import { Sequelize } from 'sequelize';
 import allConfig from '../config/config.js';
 
 import initActivityModel from './activity.mjs';
-import initCityModel from './city.mjs';
-import initCountryModel from './country.mjs';
 import initFoodModel from './food.mjs';
 import initReviewModel from './review.mjs';
 import initSiteModel from './site.mjs';
