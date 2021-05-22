@@ -41,9 +41,9 @@ db.Activity.belongsTo(db.Trip);
 db.Trip.hasMany(db.Food);
 db.Food.belongsTo(db.Trip);
 
-db.Users.belongstoMany(db.Site, { through: 'liked_sites' });
-db.Users.belongstoMany(db.Activity, { through: 'liked_activities' });
-db.Users.belongstoMany(db.Food, { through: 'liked_food' });
+db.User.belongstoMany(db.Site, { through: 'liked_sites' });
+db.User.belongstoMany(db.Activity, { through: 'liked_activities' });
+db.User.belongstoMany(db.Food, { through: 'liked_food' });
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
