@@ -19,13 +19,13 @@ export default function initTripModel(sequelize, DataTypes) {
         type: DataTypes.INTEGER,
       },
       budget: {
-        type: DataTypes.JSON,
+        type: DataTypes.INTEGER,
       },
       hotelDetails: {
-        type: DataTypes.JSON,
+        type: DataTypes.STRING,
       },
       locationDetails: {
-        type: DataTypes.JSON,
+        type: DataTypes.STRING,
       },
       tripType: {
         type: DataTypes.STRING,

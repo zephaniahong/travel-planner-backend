@@ -44,13 +44,13 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       budget: {
-        type: Sequelize.JSON,
+        type: Sequelize.INTEGER,
       },
       hotel_details: {
-        type: Sequelize.JSON,
+        type: Sequelize.STRING,
       },
       location_details: {
-        type: Sequelize.JSON,
+        type: Sequelize.STRING,
       },
       trip_type: {
         type: Sequelize.STRING,
