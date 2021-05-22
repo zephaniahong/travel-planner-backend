@@ -26,65 +26,6 @@ module.exports = {
       },
     });
 
-    await queryInterface.createTable('countries', {
-      id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        type: Sequelize.INTEGER,
-      },
-      name: {
-        type: Sequelize.STRING,
-      },
-      lat: {
-        type: Sequelize.INTEGER,
-      },
-      lng: {
-        type: Sequelize.INTEGER,
-      },
-      created_at: {
-        allowNull: false,
-        type: Sequelize.DATE,
-      },
-      updated_at: {
-        allowNull: false,
-        type: Sequelize.DATE,
-      },
-    });
-
-    await queryInterface.createTable('cities', {
-      id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        type: Sequelize.INTEGER,
-      },
-      name: {
-        type: Sequelize.STRING,
-      },
-      country_id: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'countries',
-          key: 'id',
-        },
-      },
-      lat: {
-        type: Sequelize.INTEGER,
-      },
-      lng: {
-        type: Sequelize.INTEGER,
-      },
-      created_at: {
-        allowNull: false,
-        type: Sequelize.DATE,
-      },
-      updated_at: {
-        allowNull: false,
-        type: Sequelize.DATE,
-      },
-    });
-
     await queryInterface.createTable('trips', {
       id: {
         allowNull: false,
@@ -99,20 +40,16 @@ module.exports = {
           key: 'id',
         },
       },
-      country_id: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'countries',
-          key: 'id',
-        },
-      },
       total_cost: {
         type: Sequelize.INTEGER,
       },
       budget: {
         type: Sequelize.JSON,
       },
-      flight_details: {
+      hotel_details: {
+        type: Sequelize.JSON,
+      },
+      location_details: {
         type: Sequelize.JSON,
       },
       trip_type: {
@@ -178,8 +115,15 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      name: {
-        type: Sequelize.STRING,
+      trip_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'trips',
+          key: 'id',
+        },
+      },
+      google_ref: {
+        type: Sequelize.JSON,
       },
       created_at: {
         allowNull: false,
@@ -198,8 +142,15 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      name: {
-        type: Sequelize.STRING,
+      trip_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'trips',
+          key: 'id',
+        },
+      },
+      google_ref: {
+        type: Sequelize.JSON,
       },
       created_at: {
         allowNull: false,
@@ -218,8 +169,15 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      name: {
-        type: Sequelize.STRING,
+      trip_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'trips',
+          key: 'id',
+        },
+      },
+      google_ref: {
+        type: Sequelize.JSON,
       },
       created_at: {
         allowNull: false,
@@ -231,7 +189,7 @@ module.exports = {
       },
     });
 
-    await queryInterface.createTable('trip_activities', {
+    await queryInterface.createTable('liked_activities', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -262,7 +220,7 @@ module.exports = {
       },
     });
 
-    await queryInterface.createTable('trip_sites', {
+    await queryInterface.createTable('liked_sites', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -293,7 +251,7 @@ module.exports = {
       },
     });
 
-    await queryInterface.createTable('trip_food', {
+    await queryInterface.createTable('liked_food', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -326,16 +284,14 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('trip_food');
-    await queryInterface.dropTable('trip_sites');
-    await queryInterface.dropTable('trip_activities');
+    await queryInterface.dropTable('liked_food');
+    await queryInterface.dropTable('liked_sites');
+    await queryInterface.dropTable('liked_activities');
     await queryInterface.dropTable('food');
     await queryInterface.dropTable('sites');
     await queryInterface.dropTable('activities');
     await queryInterface.dropTable('reviews');
     await queryInterface.dropTable('trips');
-    await queryInterface.dropTable('cities');
-    await queryInterface.dropTable('countries');
     await queryInterface.dropTable('users');
   },
 };

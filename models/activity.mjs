@@ -8,8 +8,15 @@ export default function initActivityModel(sequelize, DataTypes) {
         primaryKey: true,
         type: DataTypes.INTEGER,
       },
-      name: {
-        type: DataTypes.STRING,
+      tripId: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'trips',
+          key: 'id',
+        },
+      },
+      googleRef: {
+        type: DataTypes.JSON,
       },
       createdAt: {
         allowNull: false,

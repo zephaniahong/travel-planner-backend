@@ -15,20 +15,16 @@ export default function initTripModel(sequelize, DataTypes) {
           key: 'id',
         },
       },
-      countryId: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: 'countries',
-          key: 'id',
-        },
-      },
       totalCost: {
         type: DataTypes.INTEGER,
       },
       budget: {
         type: DataTypes.JSON,
       },
-      flightDetails: {
+      hotelDetails: {
+        type: DataTypes.JSON,
+      },
+      locationDetails: {
         type: DataTypes.JSON,
       },
       tripType: {
