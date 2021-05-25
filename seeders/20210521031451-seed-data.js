@@ -24,18 +24,25 @@ module.exports = {
     function randomDate(start, end) {
       return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
     }
+
     // add days to a date
     function addDays(date, days) {
       const result = new Date(date);
       result.setDate(result.getDate() + days);
       return result;
     }
+
     // hiroshima, kyoto, toyko, kumamoto, sapporo, osaka, okinawa
     const hotels = ['ANA Crowne Plaza Hiroshima, an IHG Hotel', 'Sheraton Grand Hiroshima Hotel', 'Kyoto Hotel Okura', 'Hotel Granvia Kyoto', 'The Yokohama Bay Hotel Tokyu', 'Ibis Styles Tokyo Bay', 'Hotel Route Inn Yanagawa', 'Hotel Wing International Select Kumamoto', 'Hotel Gracery Sapporo', 'Hotel Nord Otaru', 'Tennoji Miyako Hotel', 'Holiday Inn Suites Shin Osaka', 'Okinawa Grand Mer Resort', 'Ansa Okinawa Resort'];
+
     const cities = ['hiroshima', 'hiroshima', 'kyoto', 'kyoto', 'toyko', 'toyko', 'kumamoto', 'kumamoto', 'sapporo', 'sapporo', 'osaka', 'osaka', 'okinawa', 'okinawa'];
+
     const tripTypes = ['Graduation', 'Family', 'Friends', 'Backpacking', 'Business', 'Honey Moon', 'Getaway'];
+
     const isPrivate = [true, false];
+
     const trips = [];
+
     for (let i = 0; i < 14; i += 1) {
       const date = randomDate(new Date(2012, 0, 1), new Date());
       const tripObj = {
@@ -59,6 +66,20 @@ module.exports = {
       trips.push(tripObj);
     }
     await queryInterface.bulkInsert('trips', trips);
+
+    const ratings = [1, 2, 3, 4, 5, 1.5, 2.5, 3.5, 4.5];
+    const reviews = [];
+    for (let i = 0; i < 14; i += 1) {
+      const reviewObj = {
+        user_id: Math.floor(Math.random() * 50) + 1,
+        trip_id: Math.floor(Math.random() * 14) + 1,
+        stars: ratings[Math.floor(Math.random() * ratings.length)],
+      };
+
+      reviews.push(reviewObj);
+    }
+
+    await queryInterface.bulkInsert('reviews', reviews);
   },
 
   down: async (queryInterface) => {
