@@ -16,7 +16,7 @@ export default function initSiteModel(sequelize, DataTypes) {
         },
       },
       googleRef: {
-        type: DataTypes.JSON,
+        type: DataTypes.STRING,
       },
       createdAt: {
         allowNull: false,

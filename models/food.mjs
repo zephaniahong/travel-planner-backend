@@ -16,7 +16,7 @@ export default function initFoodModel(sequelize, DataTypes) {
         },
       },
       googleRef: {
-        type: DataTypes.JSON,
+        type: DataTypes.STRING,
       },
       createdAt: {
         allowNull: false,

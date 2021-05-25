@@ -123,7 +123,7 @@ module.exports = {
         },
       },
       google_ref: {
-        type: Sequelize.JSON,
+        type: Sequelize.STRING,
       },
       created_at: {
         allowNull: false,
@@ -150,7 +150,7 @@ module.exports = {
         },
       },
       google_ref: {
-        type: Sequelize.JSON,
+        type: Sequelize.STRING,
       },
       created_at: {
         allowNull: false,
@@ -177,7 +177,7 @@ module.exports = {
         },
       },
       google_ref: {
-        type: Sequelize.JSON,
+        type: Sequelize.STRING,
       },
       created_at: {
         allowNull: false,
