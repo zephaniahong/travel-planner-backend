@@ -23,7 +23,7 @@ export default function initReviewModel(sequelize, DataTypes) {
         },
       },
       stars: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.FLOAT,
       },
       createdAt: {
         allowNull: false,
