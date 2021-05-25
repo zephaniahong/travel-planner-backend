@@ -74,6 +74,8 @@ module.exports = {
         user_id: Math.floor(Math.random() * 50) + 1,
         trip_id: Math.floor(Math.random() * 14) + 1,
         stars: ratings[Math.floor(Math.random() * ratings.length)],
+        created_at: new Date(),
+        updated_at: new Date(),
       };
 
       reviews.push(reviewObj);
