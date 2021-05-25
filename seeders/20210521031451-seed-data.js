@@ -31,8 +31,8 @@ module.exports = {
       return result;
     }
     // hiroshima, kyoto, toyko, kumamoto, sapporo, osaka, okinawa
-    const hotels = ['ChIJiVBHfgmiWjURpjekJJu0wyY', 'ChIJ37kzZt2jWjURV9aF8weHHDs', 'ChIJ2TyG6CgGAWAR4hjo_gql_J4', 'ChIJq6q2oIQIAWAR_ZgZSn5Gq-A', 'ChIJfV9KdPiLGGARn4ma2GUEoJo', 'ChIJibNldL-OGGARXu2ehqOhpLo', 'ChIJIY8ZJVymRjURieTwFhgLPQQ', 'ChIJO3FL6menRjURgLiDwXzEebU', 'ChIJYdwsT4gpC18R7Z3NlIV6p-c', 'ChIJBWk65ocpC18REePVyMvohvg', 'ChIJV9_9O5HmAGARP4vReC4HTGo', ' ChIJkZwuriDlAGARO1IWhPEyC-4', 'ChIJQ_efpAgT5TQRLG1aMkoSKls', 'ChIJuzthPjAA5TQRqpxjAaXS1AI'];
-    const cities = ['ChIJu0_z7giZWjURcvfBz1DO5Ac', 'ChIJu0_z7giZWjURcvfBz1DO5Ac', 'ChIJ8cM8zdaoAWARPR27azYdlsA', 'ChIJ8cM8zdaoAWARPR27azYdlsA', 'ChIJXSModoWLGGARILWiCfeu2M0', 'ChIJXSModoWLGGARILWiCfeu2M0', 'ChIJTxvxrBT0QDURMVzPm9HOURo', 'ChIJTxvxrBT0QDURMVzPm9HOURo', 'ChIJMzaXWnXUCl8R1bqHRp1-kzM', 'ChIJMzaXWnXUCl8R1bqHRp1-kzM', 'ChIJ4eIGNFXmAGAR5y9q5G7BW8U', 'ChIJ4eIGNFXmAGAR5y9q5G7BW8U', 'ChIJ51ur7mJw9TQR79H9hnJhuzU', 'ChIJ51ur7mJw9TQR79H9hnJhuzU'];
+    const hotels = ['ANA Crowne Plaza Hiroshima, an IHG Hotel', 'Sheraton Grand Hiroshima Hotel', 'Kyoto Hotel Okura', 'Hotel Granvia Kyoto', 'The Yokohama Bay Hotel Tokyu', 'Ibis Styles Tokyo Bay', 'Hotel Route Inn Yanagawa', 'Hotel Wing International Select Kumamoto', 'Hotel Gracery Sapporo', 'Hotel Nord Otaru', 'Tennoji Miyako Hotel', 'Holiday Inn Suites Shin Osaka', 'Okinawa Grand Mer Resort', 'Ansa Okinawa Resort'];
+    const cities = ['hiroshima', 'hiroshima', 'kyoto', 'kyoto', 'toyko', 'toyko', 'kumamoto', 'kumamoto', 'sapporo', 'sapporo', 'osaka', 'osaka', 'okinawa', 'okinawa'];
     const tripTypes = ['Graduation', 'Family', 'Friends', 'Backpacking', 'Business', 'Honey Moon', 'Getaway'];
     const isPrivate = [true, false];
     const trips = [];
@@ -47,8 +47,8 @@ module.exports = {
         //   "sites": Math.floor(Math.random() * 3000) + 100,
         //   "activities": Math.floor(Math.random() * 3000) + 100,
         // },
-        hotel_details: hotels[i],
-        location_details: cities[i],
+        hotel: hotels[i],
+        city: cities[i],
         trip_type: tripTypes[Math.floor(Math.random() * (tripTypes.length - 1))],
         start_date: date,
         end_date: addDays(date, Math.floor(Math.random() * 16) + 1),

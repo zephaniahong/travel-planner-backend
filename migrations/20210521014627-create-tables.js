@@ -46,10 +46,10 @@ module.exports = {
       budget: {
         type: Sequelize.INTEGER,
       },
-      hotel_details: {
+      hotel: {
         type: Sequelize.STRING,
       },
-      location_details: {
+      city: {
         type: Sequelize.STRING,
       },
       trip_type: {
@@ -122,7 +122,7 @@ module.exports = {
           key: 'id',
         },
       },
-      google_ref: {
+      address: {
         type: Sequelize.STRING,
       },
       created_at: {
@@ -149,7 +149,7 @@ module.exports = {
           key: 'id',
         },
       },
-      google_ref: {
+      address: {
         type: Sequelize.STRING,
       },
       created_at: {
@@ -176,7 +176,7 @@ module.exports = {
           key: 'id',
         },
       },
-      google_ref: {
+      address: {
         type: Sequelize.STRING,
       },
       created_at: {

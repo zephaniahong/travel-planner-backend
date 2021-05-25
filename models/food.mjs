@@ -15,7 +15,7 @@ export default function initFoodModel(sequelize, DataTypes) {
           key: 'id',
         },
       },
-      googleRef: {
+      address: {
         type: DataTypes.STRING,
       },
       createdAt: {

@@ -15,7 +15,7 @@ export default function initSiteModel(sequelize, DataTypes) {
           key: 'id',
         },
       },
-      googleRef: {
+      address: {
         type: DataTypes.STRING,
       },
       createdAt: {
