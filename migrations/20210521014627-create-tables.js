@@ -49,6 +49,9 @@ module.exports = {
       hotel: {
         type: Sequelize.STRING,
       },
+      country: {
+        type: Sequelize.STRING,
+      },
       city: {
         type: Sequelize.STRING,
       },

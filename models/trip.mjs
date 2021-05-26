@@ -24,6 +24,9 @@ export default function initTripModel(sequelize, DataTypes) {
       hotel: {
         type: DataTypes.STRING,
       },
+      country: {
+        type: DataTypes.STRING,
+      },
       city: {
         type: DataTypes.STRING,
       },

@@ -33,9 +33,12 @@ module.exports = {
     }
 
     // hiroshima, kyoto, toyko, kumamoto, sapporo, osaka, okinawa
-    const hotels = ['ANA Crowne Plaza Hiroshima, an IHG Hotel', 'Sheraton Grand Hiroshima Hotel', 'Kyoto Hotel Okura', 'Hotel Granvia Kyoto', 'The Yokohama Bay Hotel Tokyu', 'Ibis Styles Tokyo Bay', 'Hotel Route Inn Yanagawa', 'Hotel Wing International Select Kumamoto', 'Hotel Gracery Sapporo', 'Hotel Nord Otaru', 'Tennoji Miyako Hotel', 'Holiday Inn Suites Shin Osaka', 'Okinawa Grand Mer Resort', 'Ansa Okinawa Resort'];
+    const hotels = ['ANA Crowne Plaza Hiroshima, an IHG Hotel', 'Sheraton Grand Hiroshima Hotel', 'Kyoto Hotel Okura', 'Hotel Granvia Kyoto', 'The Yokohama Bay Hotel Tokyu', 'Ibis Styles Tokyo Bay', 'Hotel Route Inn Yanagawa', 'Hotel Wing International Select Kumamoto', 'Hotel Gracery Sapporo', 'Hotel Nord Otaru', 'Tennoji Miyako Hotel', 'Holiday Inn Suites Shin Osaka', 'Okinawa Grand Mer Resort', 'Ansa Okinawa Resort', 'Gilligans', 'Park Hyatt', 'Palazzo Versace', 'Blue Lagoon', 'Hilton Surfers', 'Ritz Carlton', 'Novotel Surfers Paradise', 'Crown Towers', 'Wrest Point', 'Emporium Hotel South Bank', 'JW Marriot', 'Park Regis', 'Sheraton', 'Sea World Resort'];
 
-    const cities = ['hiroshima', 'hiroshima', 'kyoto', 'kyoto', 'toyko', 'toyko', 'kumamoto', 'kumamoto', 'sapporo', 'sapporo', 'osaka', 'osaka', 'okinawa', 'okinawa'];
+    const cities = ['hiroshima', 'hiroshima', 'kyoto', 'kyoto', 'toyko', 'toyko', 'kumamoto', 'kumamoto', 'sapporo', 'sapporo', 'osaka', 'osaka', 'okinawa', 'okinawa',
+      'queensland', 'queensland', 'melbourne', 'melbourne', 'melbourne', 'sydney', 'sydney', 'new south wales', 'new south wales', 'victora', 'victoria', 'tasmania', 'perth', 'perth'];
+
+    const countries = ['japan', 'japan', 'japan', 'japan', 'japan', 'japan', 'japan', 'japan', 'japan', 'japan', 'japan', 'japan', 'japan', 'japan', 'australia', 'australia', 'australia', 'australia', 'australia', 'australia', 'australia', 'australia', 'australia', 'australia', 'australia', 'australia', 'australia', 'australia'];
 
     const tripTypes = ['Graduation', 'Family', 'Friends', 'Backpacking', 'Business', 'Honey Moon', 'Getaway'];
 
@@ -43,7 +46,7 @@ module.exports = {
 
     const trips = [];
 
-    for (let i = 0; i < 14; i += 1) {
+    for (let i = 0; i < 28; i += 1) {
       const date = randomDate(new Date(2012, 0, 1), new Date());
       const tripObj = {
         user_id: Math.floor(Math.random() * 50) + 1,
@@ -55,6 +58,7 @@ module.exports = {
         //   "activities": Math.floor(Math.random() * 3000) + 100,
         // },
         hotel: hotels[i],
+        country: countries[i],
         city: cities[i],
         trip_type: tripTypes[Math.floor(Math.random() * (tripTypes.length - 1))],
         start_date: date,
@@ -69,10 +73,10 @@ module.exports = {
 
     const ratings = [1, 2, 3, 4, 5, 1.5, 2.5, 3.5, 4.5];
     const reviews = [];
-    for (let i = 0; i < 14; i += 1) {
+    for (let i = 0; i < trips.length; i += 1) {
       const reviewObj = {
-        user_id: Math.floor(Math.random() * 50) + 1,
-        trip_id: Math.floor(Math.random() * 14) + 1,
+        user_id: Math.floor(Math.random() * users.length) + 1,
+        trip_id: Math.floor(Math.random() * trips.length) + 1,
         stars: ratings[Math.floor(Math.random() * ratings.length)],
         created_at: new Date(),
         updated_at: new Date(),
