@@ -71,7 +71,7 @@ module.exports = {
     }
     await queryInterface.bulkInsert('trips', trips);
 
-    const ratings = [1, 2, 3, 4, 5, 1.5, 2.5, 3.5, 4.5];
+    const ratings = [1, 2, 3, 4, 5];
     const reviews = [];
     for (let i = 0; i < trips.length; i += 1) {
       const reviewObj = {
