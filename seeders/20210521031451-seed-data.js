@@ -35,6 +35,23 @@ module.exports = {
     // hiroshima, kyoto, toyko, kumamoto, sapporo, osaka, okinawa
     const hotels = ['ANA Crowne Plaza Hiroshima, an IHG Hotel', 'Sheraton Grand Hiroshima Hotel', 'Kyoto Hotel Okura', 'Hotel Granvia Kyoto', 'The Yokohama Bay Hotel Tokyu', 'Ibis Styles Tokyo Bay', 'Hotel Route Inn Yanagawa', 'Hotel Wing International Select Kumamoto', 'Hotel Gracery Sapporo', 'Hotel Nord Otaru', 'Tennoji Miyako Hotel', 'Holiday Inn Suites Shin Osaka', 'Okinawa Grand Mer Resort', 'Ansa Okinawa Resort', 'Gilligans', 'Park Hyatt', 'Palazzo Versace', 'Blue Lagoon', 'Hilton Surfers', 'Ritz Carlton', 'Novotel Surfers Paradise', 'Crown Towers', 'Wrest Point', 'Emporium Hotel South Bank', 'JW Marriot', 'Park Regis', 'Sheraton', 'Sea World Resort'];
 
+    const genLoc = (min, max) => Number((Math.random() * (max - min + 1) + min).toFixed(4));
+    // const genAusLat = () => Number((Math.random() * 15 - 42).toFixed(4));
+
+    const hotelLat = [];
+    const hotelLng = [];
+
+    for (let i = 0; i < 28; i += 1) {
+      if (i <= 14) {
+        hotelLat.push(genLoc(30, 33));
+        hotelLng.push(genLoc(130, 135));
+      }
+      else if (i > 14) {
+        hotelLat.push(-Math.abs(genLoc(15, 40)));
+        hotelLng.push(genLoc(125, 147));
+      }
+    }
+
     const cities = ['hiroshima', 'hiroshima', 'kyoto', 'kyoto', 'toyko', 'toyko', 'kumamoto', 'kumamoto', 'sapporo', 'sapporo', 'osaka', 'osaka', 'okinawa', 'okinawa',
       'queensland', 'queensland', 'melbourne', 'melbourne', 'melbourne', 'sydney', 'sydney', 'new south wales', 'new south wales', 'victora', 'victoria', 'tasmania', 'perth', 'perth'];
 
@@ -57,6 +74,8 @@ module.exports = {
         //   "sites": Math.floor(Math.random() * 3000) + 100,
         //   "activities": Math.floor(Math.random() * 3000) + 100,
         // },
+        hotel_lat: hotelLat[i],
+        hotel_lng: hotelLng[i],
         hotel: hotels[i],
         country: countries[i],
         city: cities[i],

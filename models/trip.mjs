@@ -21,6 +21,12 @@ export default function initTripModel(sequelize, DataTypes) {
       budget: {
         type: DataTypes.INTEGER,
       },
+      hotelLat: {
+        type: DataTypes.FLOAT,
+      },
+      hotelLng: {
+        type: DataTypes.FLOAT,
+      },
       hotel: {
         type: DataTypes.STRING,
       },
