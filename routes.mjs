@@ -4,6 +4,8 @@ import initTripsController from './controllers/trips.mjs';
 
 export default function bindRoutes(app) {
   const TripsController = initTripsController(db);
-
   app.get('./gettrips', TripsController.getTrips);
+
+  // create new trip
+  app.post('/createtrip', TripsController.newTrip);
 }

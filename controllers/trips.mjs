@@ -9,7 +9,18 @@ export default function initTripsController(db) {
     }
   };
 
+  const newTrip = async (req, res) => {
+    try {
+      const trip = await db.Trip.create({
+        userId: 1,
+      });
+      res.send(trip.id);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return {
-    getTrips,
+    getTrips, newTrip,
   };
 }
