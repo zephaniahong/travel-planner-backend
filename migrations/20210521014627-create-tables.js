@@ -46,6 +46,12 @@ module.exports = {
       budget: {
         type: Sequelize.INTEGER,
       },
+      hotel_lat: {
+        type: Sequelize.FLOAT,
+      },
+      hotel_lng: {
+        type: Sequelize.FLOAT,
+      },
       hotel: {
         type: Sequelize.STRING,
       },
