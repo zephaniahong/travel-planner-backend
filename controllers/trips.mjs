@@ -18,7 +18,8 @@ export default function initTripsController(db) {
       const trip = await db.Trip.create({
         userId: 1,
       });
-      res.send(trip.id);
+      const tripId = trip.id;
+      res.send({ tripId });
     } catch (err) {
       console.log(err);
     }
