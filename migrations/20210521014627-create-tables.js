@@ -131,6 +131,9 @@ module.exports = {
           key: 'id',
         },
       },
+      name: {
+        type: Sequelize.STRING,
+      },
       address: {
         type: Sequelize.STRING,
       },

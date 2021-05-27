@@ -15,6 +15,9 @@ export default function initItemModel(sequelize, DataTypes) {
           key: 'id',
         },
       },
+      name: {
+        type: DataTypes.STRING,
+      },
       address: {
         type: DataTypes.STRING,
       },
