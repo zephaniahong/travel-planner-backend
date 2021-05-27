@@ -1,4 +1,4 @@
-export default function initSitesController(db) {
+export default function initItemsController(db) {
   const addItem = async (req, res) => {
     const { type, tripId, description } = req.body;
     try {
@@ -23,7 +23,31 @@ export default function initSitesController(db) {
       console.log(err);
     }
   };
+
+  const getItems = async (req, res) => {
+    const { tripId } = req.params;
+    try {
+      const siteItems = await db.Site.findAll({
+        where: {
+          tripId,
+        },
+      });
+      const foodItems = await db.Food.findAll({
+        where: {
+          tripId,
+        },
+      });
+      const activityItems = await db.Activity.findAll({
+        where: {
+          tripId,
+        },
+      });
+      res.send({ siteItems, foodItems, activityItems });
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return {
-    addItem,
+    addItem, getItems,
   };
 }

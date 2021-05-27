@@ -1,6 +1,6 @@
-export default function initSiteModel(sequelize, DataTypes) {
+export default function initItemModel(sequelize, DataTypes) {
   return sequelize.define(
-    'site',
+    'item',
     {
       id: {
         allowNull: false,
@@ -16,6 +16,9 @@ export default function initSiteModel(sequelize, DataTypes) {
         },
       },
       address: {
+        type: DataTypes.STRING,
+      },
+      type: {
         type: DataTypes.STRING,
       },
       createdAt: {
