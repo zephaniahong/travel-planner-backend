@@ -43,12 +43,12 @@ module.exports = {
 
     for (let i = 0; i < 28; i += 1) {
       if (i <= 14) {
-        hotelLat.push(genLoc(30, 33));
-        hotelLng.push(genLoc(130, 135));
+        hotelLat.push(genLoc(30, 33)); // Japan
+        hotelLng.push(genLoc(130, 135)); // Australia
       }
       else if (i > 14) {
-        hotelLat.push(-Math.abs(genLoc(15, 40)));
-        hotelLng.push(genLoc(125, 147));
+        hotelLat.push(-Math.abs(genLoc(15, 40))); // Japan
+        hotelLng.push(genLoc(125, 147));// Australia
       }
     }
 
@@ -105,6 +105,22 @@ module.exports = {
     }
 
     await queryInterface.bulkInsert('reviews', reviews);
+
+    const types = ['restaurant', 'natural_feature', "point_of_interest"];
+    const items = [];
+    for (let i = 0; i < 11; i += 1) {
+      const itemObj = {
+        trip_id: 32,
+        name: faker.commerce.product(),
+        address: faker.address.streetName() + faker.address.streetAddress(),
+        type: types[Math.floor(Math.random() * types.length)],
+        created_at: new Date(),
+        updated_at: new Date(),
+      };
+
+      items.push(itemObj);
+    }
+    await queryInterface.bulkInsert('items', items);
   },
 
   down: async (queryInterface) => {
