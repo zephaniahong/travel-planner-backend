@@ -43,12 +43,12 @@ module.exports = {
 
     for (let i = 0; i < 28; i += 1) {
       if (i <= 14) {
-        hotelLat.push(genLoc(30, 33));
-        hotelLng.push(genLoc(130, 135));
+        hotelLat.push(genLoc(30, 33)); // Japan
+        hotelLng.push(genLoc(130, 135)); // Australia
       }
       else if (i > 14) {
-        hotelLat.push(-Math.abs(genLoc(15, 40)));
-        hotelLng.push(genLoc(125, 147));
+        hotelLat.push(-Math.abs(genLoc(15, 40))); // Japan
+        hotelLng.push(genLoc(125, 147));// Australia
       }
     }
 

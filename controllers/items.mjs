@@ -1,9 +1,9 @@
 export default function initItemsController(db) {
   const addItem = async (req, res) => {
-    console.log(req.body);
     const {
       type, tripId, mainText, secondaryText,
     } = req.body;
+
     try {
       const item = await db.Item.create({
         name: mainText,
@@ -11,7 +11,7 @@ export default function initItemsController(db) {
         type,
         address: secondaryText,
       });
-      console.log(item);
+
       res.send(item);
     } catch (err) {
       console.log(err);
