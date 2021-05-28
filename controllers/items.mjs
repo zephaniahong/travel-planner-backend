@@ -1,24 +1,18 @@
 export default function initItemsController(db) {
   const addItem = async (req, res) => {
-    const { type, tripId, description } = req.body;
+    console.log(req.body);
+    const {
+      type, tripId, mainText, secondaryText,
+    } = req.body;
     try {
-      if (type === 'food') {
-        const newItem = await db.Food.create({
-          tripId,
-          address: description,
-        });
-      } else if (type === 'sites') {
-        const newItem = await db.Site.create({
-          tripId,
-          address: description,
-        });
-      } else if (type === 'activities') {
-        const newItem = await db.Activity.create({
-          tripId,
-          address: description,
-        });
-      }
-      res.sendStatus(200);
+      const item = await db.Item.create({
+        name: mainText,
+        tripId,
+        type,
+        address: secondaryText,
+      });
+      console.log(item);
+      res.send(item);
     } catch (err) {
       console.log(err);
     }
@@ -27,22 +21,12 @@ export default function initItemsController(db) {
   const getItems = async (req, res) => {
     const { tripId } = req.params;
     try {
-      const siteItems = await db.Site.findAll({
+      const items = await db.Item.findAll({
         where: {
           tripId,
         },
       });
-      const foodItems = await db.Food.findAll({
-        where: {
-          tripId,
-        },
-      });
-      const activityItems = await db.Activity.findAll({
-        where: {
-          tripId,
-        },
-      });
-      res.send({ siteItems, foodItems, activityItems });
+      res.send(items);
     } catch (err) {
       console.log(err);
     }
