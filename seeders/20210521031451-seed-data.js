@@ -120,7 +120,7 @@ module.exports = {
 
       items.push(itemObj);
     }
-    await queryInterface.bulkInsert('items', items);
+    await queryInterface.bulkInsert('items', items, { returning: true });
   },
 
   down: async (queryInterface) => {
