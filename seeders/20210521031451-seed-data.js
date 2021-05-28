@@ -103,8 +103,154 @@ module.exports = {
 
       reviews.push(reviewObj);
     }
-
     await queryInterface.bulkInsert('reviews', reviews);
+
+    // items
+    const items = [];
+    const item1 = {
+      name: 'Ramen FeeL',
+      address: 'Japan, Tokyo, Ome, Baigo, 4 Chome−695-1',
+      type: 'food',
+      created_at: new Date(),
+      updated_at: new Date(),
+    };
+    const item2 = {
+      name: 'BUNGEE',
+      address: 'Seongnam-dong, Ulsan, South Korea',
+      type: 'activities',
+      created_at: new Date(),
+      updated_at: new Date(),
+    };
+    const item3 = {
+      name: 'Mount Fuji',
+      address: 'Kitayama, Fujinomiya, Shizuoka, Japan',
+      type: 'sites',
+      created_at: new Date(),
+      updated_at: new Date(),
+    };
+    const item4 = {
+      name: 'Ramen Atelier Nakiryū',
+      address: '2 Chome-34-4 Minami-Ōtsuka, Toshima City, Tokyo, Japan',
+      type: 'food',
+      created_at: new Date(),
+      updated_at: new Date(),
+    };
+    const item5 = {
+      name: 'Burger King Osu',
+      address: '3 Chome-30-32 Osu, Naka Ward, Nagoya, Aichi, Japan',
+      type: 'food',
+      created_at: new Date(),
+      updated_at: new Date(),
+    };
+    const item6 = {
+      name: 'beef cutlet',
+      address: '3 Chome-32-2 Shinjuku, Shinjuku City, Tokyo, Japan',
+      type: 'food',
+      created_at: new Date(),
+      updated_at: new Date(),
+    };
+    const item7 = {
+      name: 'noodle&spice curry 今日の一番',
+      address: 'Japan, Saitama, Kawaguchi, Iizuka, 3 Chome−2−12',
+      type: 'food',
+      created_at: new Date(),
+      updated_at: new Date(),
+    };
+    const item8 = {
+      name: 'noodle&spice curry 今日の一番',
+      address: 'Japan, Saitama, Kawaguchi, Iizuka, 3 Chome−2−12',
+      type: 'food',
+      created_at: new Date(),
+      updated_at: new Date(),
+    };
+    const item9 = {
+      name: 'Japanese Ramen Noodle Lab Q',
+      address: '2 Chome-１-3 Kita 1 Jonishi, Chuo Ward, Sapporo, Hokkaido, Japan',
+      type: 'food',
+      created_at: new Date(),
+      updated_at: new Date(),
+    };
+    const item10 = {
+      name: 'Noodle MAZERU',
+      address: '1 Chome-14 Kanda Sakumacho, Chiyoda City, Tokyo, Japan',
+      type: 'food',
+      created_at: new Date(),
+      updated_at: new Date(),
+    };
+    const item11 = {
+      name: 'Mount Takao',
+      address: 'Takaomachi, Hachioji, Tokyo, Japan',
+      type: 'sites',
+      created_at: new Date(),
+      updated_at: new Date(),
+    };
+    const item12 = {
+      name: 'Mount Mitake',
+      address: 'Mitakesan, Ome, Tokyo, Japan',
+      type: 'sites',
+      created_at: new Date(),
+      updated_at: new Date(),
+    };
+    const item13 = {
+      name: 'Mount Yoshino',
+      address: 'Yoshinoyama, Yoshino, Nara, Japan',
+      type: 'sites',
+      created_at: new Date(),
+      updated_at: new Date(),
+    };
+    const item14 = {
+      name: 'Tama river Cycling road',
+      address: '6 Chome-34 Haneda, Ota City, Tokyo, Japan',
+      type: 'activities',
+      created_at: new Date(),
+      updated_at: new Date(),
+    };
+    const item15 = {
+      name: 'Tsurumi River Cycling Course',
+      address: 'Kozukuechō, Kohoku Ward, Yokohama, Kanagawa, Japan',
+      type: 'activities',
+      created_at: new Date(),
+      updated_at: new Date(),
+    };
+    const item16 = {
+      name: 'Nottingham Train Station',
+      address: 'Carrington Street, Nottingham, UK',
+      type: 'activities',
+      created_at: new Date(),
+      updated_at: new Date(),
+    };
+    items.push(item1);
+    items.push(item2);
+    items.push(item3);
+    items.push(item4);
+    items.push(item5);
+    items.push(item6);
+    items.push(item7);
+    items.push(item8);
+    items.push(item9);
+    items.push(item10);
+    items.push(item11);
+    items.push(item12);
+    items.push(item13);
+    items.push(item14);
+    items.push(item15);
+    items.push(item16);
+    await queryInterface.bulkInsert('items', items);
+
+    // liked items
+    const likedItems = [];
+    const types = ['sites', 'activities', 'food'];
+    for (let i = 0; i < 79; i += 1) {
+      const item = {
+        trip_id: Math.floor(Math.random() * 14) + 1,
+        item_id: Math.floor(Math.random() * 16) + 1,
+        type: types[Math.floor(Math.random() * 2)],
+        created_at: new Date(),
+        updated_at: new Date(),
+      };
+      likedItems.push(item);
+    }
+    await queryInterface.bulkInsert('liked_items', likedItems);
   },
 
   down: async (queryInterface) => {
