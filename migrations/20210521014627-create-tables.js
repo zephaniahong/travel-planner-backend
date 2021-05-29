@@ -157,10 +157,10 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      trip_id: {
+      user_id: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'trips',
+          model: 'users',
           key: 'id',
         },
       },
@@ -183,7 +183,6 @@ module.exports = {
         type: Sequelize.DATE,
       },
     });
-
     async (queryInterface, Sequelize) => {
       await queryInterface.dropTable('liked_items');
       await queryInterface.dropTable('items');

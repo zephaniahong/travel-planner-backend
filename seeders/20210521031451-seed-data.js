@@ -242,7 +242,7 @@ module.exports = {
     const types = ['sites', 'activities', 'food'];
     for (let i = 0; i < 79; i += 1) {
       const item = {
-        trip_id: Math.floor(Math.random() * 14) + 1,
+        user_id: Math.floor(Math.random() * 50) + 1,
         item_id: Math.floor(Math.random() * 16) + 1,
         type: types[Math.floor(Math.random() * 2)],
         created_at: new Date(),
