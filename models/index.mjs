@@ -26,7 +26,7 @@ db.Trip.hasMany(db.Review);
 db.Review.belongsTo(db.Trip);
 
 db.User.hasMany(db.Review);
-db.Review.hasMany(db.User);
+db.Review.belongsTo(db.User);
 
 db.Trip.hasMany(db.Item);
 db.Item.belongsTo(db.Trip);
