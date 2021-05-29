@@ -17,8 +17,11 @@ export default function bindRoutes(app) {
   // get all items of a user
   app.get('/get-items/:tripId', ItemsController.getItems);
 
-  // default to sites controller
+  // add single item
   app.post('/add-item', ItemsController.addItem);
+
+  // get all liked item
+  app.get('/get-liked-items', UsersController.getLikedItems);
 
   app.get('/gettrips', TripsController.getTrips);
   app.get('/usertrips', UsersController.userTrips);

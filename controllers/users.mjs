@@ -15,8 +15,16 @@ export default function initUsersController(db) {
       console.log(err);
     }
   };
-
+  const getLikedItems = async (req, res) => {
+    try {
+      const user = await db.User.findByPk(19);
+      const likedItems = await user.getItems();
+      res.send(likedItems);
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return {
-    userTrips,
+    userTrips, getLikedItems,
   };
 }
