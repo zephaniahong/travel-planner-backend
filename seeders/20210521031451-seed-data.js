@@ -108,13 +108,15 @@ module.exports = {
     // items
     const items = [];
     const item1 = {
-      name: 'Ramen FeeL',
+      trip_id: 11,
+      name: 'Ramen Feel',
       address: 'Japan, Tokyo, Ome, Baigo, 4 Chome−695-1',
       type: 'food',
       created_at: new Date(),
       updated_at: new Date(),
     };
     const item2 = {
+      trip_id: 11,
       name: 'BUNGEE',
       address: 'Seongnam-dong, Ulsan, South Korea',
       type: 'activities',
@@ -122,6 +124,7 @@ module.exports = {
       updated_at: new Date(),
     };
     const item3 = {
+      trip_id: 11,
       name: 'Mount Fuji',
       address: 'Kitayama, Fujinomiya, Shizuoka, Japan',
       type: 'sites',
@@ -129,6 +132,7 @@ module.exports = {
       updated_at: new Date(),
     };
     const item4 = {
+      trip_id: 11,
       name: 'Ramen Atelier Nakiryū',
       address: '2 Chome-34-4 Minami-Ōtsuka, Toshima City, Tokyo, Japan',
       type: 'food',
@@ -136,6 +140,7 @@ module.exports = {
       updated_at: new Date(),
     };
     const item5 = {
+      trip_id: 11,
       name: 'Burger King Osu',
       address: '3 Chome-30-32 Osu, Naka Ward, Nagoya, Aichi, Japan',
       type: 'food',
@@ -143,13 +148,15 @@ module.exports = {
       updated_at: new Date(),
     };
     const item6 = {
-      name: 'beef cutlet',
+      trip_id: 4,
+      name: 'Beef cutlet',
       address: '3 Chome-32-2 Shinjuku, Shinjuku City, Tokyo, Japan',
       type: 'food',
       created_at: new Date(),
       updated_at: new Date(),
     };
     const item7 = {
+      trip_id: 4,
       name: 'noodle&spice curry 今日の一番',
       address: 'Japan, Saitama, Kawaguchi, Iizuka, 3 Chome−2−12',
       type: 'food',
@@ -157,6 +164,7 @@ module.exports = {
       updated_at: new Date(),
     };
     const item8 = {
+      trip_id: 11,
       name: 'noodle&spice curry 今日の一番',
       address: 'Japan, Saitama, Kawaguchi, Iizuka, 3 Chome−2−12',
       type: 'food',
@@ -164,13 +172,16 @@ module.exports = {
       updated_at: new Date(),
     };
     const item9 = {
+      trip_id: 4,
       name: 'Japanese Ramen Noodle Lab Q',
       address: '2 Chome-１-3 Kita 1 Jonishi, Chuo Ward, Sapporo, Hokkaido, Japan',
       type: 'food',
       created_at: new Date(),
       updated_at: new Date(),
     };
+
     const item10 = {
+      trip_id: 11,
       name: 'Noodle MAZERU',
       address: '1 Chome-14 Kanda Sakumacho, Chiyoda City, Tokyo, Japan',
       type: 'food',
@@ -178,6 +189,7 @@ module.exports = {
       updated_at: new Date(),
     };
     const item11 = {
+      trip_id: 4,
       name: 'Mount Takao',
       address: 'Takaomachi, Hachioji, Tokyo, Japan',
       type: 'sites',
@@ -185,6 +197,7 @@ module.exports = {
       updated_at: new Date(),
     };
     const item12 = {
+      trip_id: 11,
       name: 'Mount Mitake',
       address: 'Mitakesan, Ome, Tokyo, Japan',
       type: 'sites',
@@ -192,6 +205,7 @@ module.exports = {
       updated_at: new Date(),
     };
     const item13 = {
+      trip_id: 5,
       name: 'Mount Yoshino',
       address: 'Yoshinoyama, Yoshino, Nara, Japan',
       type: 'sites',
@@ -199,6 +213,7 @@ module.exports = {
       updated_at: new Date(),
     };
     const item14 = {
+      trip_id: 11,
       name: 'Tama river Cycling road',
       address: '6 Chome-34 Haneda, Ota City, Tokyo, Japan',
       type: 'activities',
@@ -213,6 +228,7 @@ module.exports = {
       updated_at: new Date(),
     };
     const item16 = {
+      trip_id: 11,
       name: 'Nottingham Train Station',
       address: 'Carrington Street, Nottingham, UK',
       type: 'activities',

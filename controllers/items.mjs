@@ -23,9 +23,11 @@ export default function initItemsController(db) {
     try {
       const items = await db.Item.findAll({
         where: {
-          tripId,
+          tripId: Number(tripId),
         },
       });
+      console.log('items!!! ---', items);
+
       res.send(items);
     } catch (err) {
       console.log(err);
