@@ -10,19 +10,13 @@ export default function bindRoutes(app) {
   const ItemsController = initItemsController(db);
 
   app.get('./gettrips', TripsController.getTrips);
-
-  // create new trip
-  app.post('/createtrip', TripsController.newTrip);
-
-  // get all items of a user
-  app.get('/get-items/:tripId', ItemsController.getItems);
-
-  // add single item
-  app.post('/add-item', ItemsController.addItem);
-
-  // get all liked item
-  app.get('/get-liked-items', UsersController.getLikedItems);
-
+  app.post('/createtrip', TripsController.newTrip); // create new trip
   app.get('/gettrips', TripsController.getTrips);
+
+  app.get('/get-items/:tripId', ItemsController.getItems); // get all items of a user
+  app.post('/add-item', ItemsController.addItem); // add single item
+
+  app.get('/get-liked-items', UsersController.getLikedItems); // get all liked item
   app.get('/usertrips', UsersController.userTrips);
+  app.post('/addlikeditem/:itemId/:userId', UsersController.addLikedItem); // Add to use's liked items
 }

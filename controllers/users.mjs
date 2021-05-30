@@ -8,13 +8,12 @@ export default function initUsersController(db) {
         },
       });
 
-      console.log("See user id 1's trips: ---", trips);
-
       res.send(trips);
     } catch (err) {
       console.log(err);
     }
   };
+
   const getLikedItems = async (req, res) => {
     try {
       const user = await db.User.findByPk(19);
@@ -24,7 +23,23 @@ export default function initUsersController(db) {
       console.log(err);
     }
   };
+
+  const addLikedItem = async (req, res) => {
+    const { itemId, userId } = req.params;
+    try {
+      const user = await db.User.findByPk(Number(userId));
+      const item = await db.Item.findByPk(Number(itemId));
+
+      const likedItem = await user.addItem(item);
+      console.log(likedItem);
+
+      res.send(likedItem);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return {
-    userTrips, getLikedItems,
+    userTrips, getLikedItems, addLikedItem,
   };
 }
