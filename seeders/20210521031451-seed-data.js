@@ -221,6 +221,7 @@ module.exports = {
       updated_at: new Date(),
     };
     const item15 = {
+      trip_id: 11,
       name: 'Tsurumi River Cycling Course',
       address: 'Kozukuechō, Kohoku Ward, Yokohama, Kanagawa, Japan',
       type: 'activities',
@@ -266,6 +267,49 @@ module.exports = {
       };
       likedItems.push(item);
     }
+
+    const user19LikedItem1 = {
+      user_id: 19,
+      item_id: 1,
+      type: "food",
+      created_at: new Date(),
+      updated_at: new Date(),
+    };
+
+    const user19LikedItem2 = {
+      user_id: 19,
+      item_id: 2,
+      type: "activities",
+      created_at: new Date(),
+      updated_at: new Date(),
+    };
+
+    const user19LikedItem3 = {
+      user_id: 19,
+      item_id: 3,
+      type: "sites",
+      created_at: new Date(),
+      updated_at: new Date(),
+    };
+
+    const user19LikedItem4 = {
+      user_id: 19,
+      item_id: 4,
+      type: "food",
+      created_at: new Date(),
+      updated_at: new Date(),
+    };
+
+    const user19LikedItem5 = {
+      user_id: 19,
+      item_id: 5,
+      type: "food",
+      created_at: new Date(),
+      updated_at: new Date(),
+    };
+
+    likedItems.push(user19LikedItem1, user19LikedItem2, user19LikedItem3, user19LikedItem4, user19LikedItem5);
+
     await queryInterface.bulkInsert('liked_items', likedItems);
   },
 
