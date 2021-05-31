@@ -27,6 +27,9 @@ export default function initItemsController(db) {
         },
       });
 
+      // Find a way to add liked (bool) key into each item.
+      // If Item Id equals to something in getLikedItems, then True.
+
       res.send(items);
     } catch (err) {
       console.log('====== getItems err =======\n', err);
