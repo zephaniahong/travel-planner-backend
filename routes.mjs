@@ -9,7 +9,7 @@ export default function bindRoutes(app) {
   const UsersController = initUsersController(db);
   const ItemsController = initItemsController(db);
 
-  app.get('./gettrips', TripsController.getTrips);
+  app.get('/gettrips', TripsController.getTrips);
   app.post('/createtrip', TripsController.newTrip); // create new trip
   app.get('/gettrips', TripsController.getTrips);
 
@@ -19,4 +19,5 @@ export default function bindRoutes(app) {
   app.get('/get-liked-items', UsersController.getLikedItems); // get all liked item
   app.get('/usertrips', UsersController.userTrips);
   app.post('/addlikeditem/:itemId/:userId', UsersController.addLikedItem); // Add to use's liked items
+  app.delete('/deletelikeditem/:itemId/:userId', UsersController.deleteLikedItem); // Delete from use's liked items
 }

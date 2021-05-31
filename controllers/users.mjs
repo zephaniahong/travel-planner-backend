@@ -31,7 +31,6 @@ export default function initUsersController(db) {
       const item = await db.Item.findByPk(Number(itemId));
 
       const likedItem = await user.addItem(item);
-      console.log(likedItem);
 
       res.send(likedItem);
     } catch (err) {
@@ -39,7 +38,27 @@ export default function initUsersController(db) {
     }
   };
 
+  const deleteLikedItem = async (req, res) => {
+    const { itemId, userId } = req.params;
+
+    try {
+      const user = await db.User.findByPk(Number(userId));
+      // const item = await db.Item.findByPk(Number(itemId));
+
+      const userItemToDelete = await user.getItems({
+        where: {
+          id: Number(itemId),
+        },
+      });
+      await userItemToDelete.destroy();
+      console.log('====== userItemToDelete: --- \n', typeof userItemToDelete);
+      // res.send(deletedItem);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return {
-    userTrips, getLikedItems, addLikedItem,
+    userTrips, getLikedItems, addLikedItem, deleteLikedItem,
   };
 }
