@@ -4,8 +4,9 @@
   "description": "",
   "main": ".eslintrc.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "node test.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.mjs",
+    "watch": "nodemon index.mjs"
   },
   "repository": {
     "type": "git",
