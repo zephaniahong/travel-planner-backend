@@ -10,7 +10,7 @@ export default function initUsersController(db) {
 
       res.send(trips);
     } catch (err) {
-      console.log(err);
+      console.log('====== userTrips err ======\n', err);
     }
   };
 
@@ -20,7 +20,7 @@ export default function initUsersController(db) {
       const likedItems = await user.getItems();
       res.send(likedItems);
     } catch (err) {
-      console.log(err);
+      console.log('====== getLikedItems err ======\n', err);
     }
   };
 
@@ -34,7 +34,7 @@ export default function initUsersController(db) {
 
       res.send(likedItem);
     } catch (err) {
-      console.log(err);
+      console.log('====== addLikedItem ======\n', err);
     }
   };
 
