@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": ".eslintrc.js",
-  "scripts": {
-    "start": "node index.js",
+    "scripts": {
+    "start": "NODE_ENV=production node ./app",
     "test": "node test.js"
   },
   "repository": {
