@@ -1,6 +1,6 @@
 import { Sequelize } from 'sequelize';
+import url from 'url';
 import allConfig from '../config/config.js';
-
 import initItemModel from './item.mjs';
 import initReviewModel from './review.mjs';
 import initTripModel from './trip.mjs';
