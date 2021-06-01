@@ -17,7 +17,7 @@ export default function bindRoutes(app) {
 
   app.post('/login', UsersController.login); // authenticate user
   app.get('/get-liked-items', UsersController.getLikedItems); // get all liked item
-  app.get('/usertrips', UsersController.userTrips);
+  app.get('/usertrips/:userId', UsersController.userTrips); // Get all trips pertaining to loggedin user.
   app.post('/addlikeditem/:itemId/:userId', UsersController.addLikedItem); // Add to use's liked items
   app.delete('/deletelikeditem/:itemId/:userId', UsersController.deleteLikedItem); // Delete from use's liked items
 }

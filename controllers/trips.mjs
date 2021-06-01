@@ -5,9 +5,6 @@ export default function initTripsController(db) {
         include: [db.Review, db.User],
       });
 
-      // const tripUsers = await trips.getUsers();
-      console.log('🚗 ----\n', trips);
-
       res.send(trips);
     } catch (err) {
       console.log('====== getTrips err======\n', err);

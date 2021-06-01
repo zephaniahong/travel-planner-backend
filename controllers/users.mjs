@@ -2,11 +2,12 @@ import jsSHA from 'jssha';
 
 export default function initUsersController(db) {
   const userTrips = async (req, res) => {
+    const { userId } = req.params;
     try {
       // Hard code user id = 1 for MVP.
       const trips = await db.Trip.findAll({
         where: {
-          userId: 1,
+          userId: Number(userId),
         },
       });
 
