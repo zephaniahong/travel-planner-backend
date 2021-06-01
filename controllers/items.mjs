@@ -19,7 +19,8 @@ export default function initItemsController(db) {
   };
 
   const getItems = async (req, res) => {
-    const { tripId } = req.params;
+    // userId being passed through is hardcoded as 19 (from store)
+    const { tripId, userId } = req.params;
     try {
       const items = await db.Item.findAll({
         where: {
@@ -27,8 +28,19 @@ export default function initItemsController(db) {
         },
       });
 
-      // Find a way to add liked (bool) key into each item.
-      // If Item Id equals to something in getLikedItems, then True.
+      const user = await db.User.findByPk(Number(userId));
+      const likedItems = await user.getItems();
+      const likedIds = likedItems.map((item) => item.id);
+
+      items.map((item) => {
+        if (likedIds.includes(item.id)) {
+          item.dataValues.liked = true;
+        } else {
+          item.dataValues.liked = false;
+        }
+      });
+
+      console.log('userItems: ----- \n', items);
 
       res.send(items);
     } catch (err) {
