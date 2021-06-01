@@ -45,20 +45,15 @@ export default function initUsersController(db) {
 
     try {
       const user = await db.User.findByPk(Number(userId));
-      // const item = await db.Item.findByPk(Number(itemId));
       // console.log('====== user: ====== \n', user.__proto__);
       const itemRemoved = await user.removeItem(itemId);
-      // const userItemToDelete = await user.getItems({
-      //   where: {
-      //     id: Number(itemId),
-      //   },
-      // });
 
       res.send(itemRemoved.toString());
     } catch (err) {
       console.log(err);
     }
   };
+
   const login = async (req, res) => {
     const { email, password } = req.body;
     try {
@@ -80,6 +75,7 @@ export default function initUsersController(db) {
     } catch (err) {
       console.log(err);
     } };
+
   return {
     userTrips, getLikedItems, addLikedItem, deleteLikedItem, login,
   };

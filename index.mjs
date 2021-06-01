@@ -4,10 +4,15 @@ import methodOverride from 'method-override';
 import cors from 'cors';
 import bindRoutes from './routes.mjs';
 
+const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:3000';
+
 // Initialise Express instance
 const app = express();
 // Set CORS headers
-app.use(cors());
+app.use(cors({
+  credentials: true,
+  origin: FRONTEND_URL,
+}));
 // Set the Express view engine to expect EJS templates
 app.set('view engine', 'ejs');
 // Bind cookie parser middleware to parse cookies in requests

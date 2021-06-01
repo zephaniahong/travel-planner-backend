@@ -9,9 +9,8 @@ export default function bindRoutes(app) {
   const UsersController = initUsersController(db);
   const ItemsController = initItemsController(db);
 
-  app.get('/gettrips', TripsController.getTrips);
   app.post('/createtrip', TripsController.newTrip); // create new trip
-  app.get('/gettrips', TripsController.getTrips);
+  app.get('/gettrips', TripsController.getTrips); // get all trips available
 
   app.get('/get-items/:tripId', ItemsController.getItems); // get all items of a user
   app.post('/add-item', ItemsController.addItem); // add single item

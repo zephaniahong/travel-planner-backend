@@ -2,10 +2,11 @@ export default function initTripsController(db) {
   const getTrips = async (req, res) => {
     try {
       const trips = await db.Trip.findAll({
-        include: {
-          model: db.Review,
-        },
+        include: [db.Review, db.User],
       });
+
+      // const tripUsers = await trips.getUsers();
+      console.log('🚗 ----\n', trips);
 
       res.send(trips);
     } catch (err) {
