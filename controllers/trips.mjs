@@ -9,7 +9,7 @@ export default function initTripsController(db) {
 
       res.send(trips);
     } catch (err) {
-      console.log(err);
+      console.log('====== getTrips err======\n', err);
     }
   };
 
@@ -21,7 +21,7 @@ export default function initTripsController(db) {
       const tripId = trip.id;
       res.send({ tripId });
     } catch (err) {
-      console.log(err);
+      console.log('====== newTrip err======\n', err);
     }
   };
 

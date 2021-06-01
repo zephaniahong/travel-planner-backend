@@ -14,7 +14,7 @@ export default function initItemsController(db) {
 
       res.send(item);
     } catch (err) {
-      console.log(err);
+      console.log('=======addItem err\n========', err);
     }
   };
 
@@ -26,11 +26,13 @@ export default function initItemsController(db) {
           tripId: Number(tripId),
         },
       });
-      console.log('items!!! ---', items);
+
+      // Find a way to add liked (bool) key into each item.
+      // If Item Id equals to something in getLikedItems, then True.
 
       res.send(items);
     } catch (err) {
-      console.log(err);
+      console.log('====== getItems err =======\n', err);
     }
   };
   return {

@@ -10,7 +10,7 @@ export default function initUsersController(db) {
 
       res.send(trips);
     } catch (err) {
-      console.log(err);
+      console.log('====== userTrips err ======\n', err);
     }
   };
 
@@ -20,7 +20,7 @@ export default function initUsersController(db) {
       const likedItems = await user.getItems();
       res.send(likedItems);
     } catch (err) {
-      console.log(err);
+      console.log('====== getLikedItems err ======\n', err);
     }
   };
 
@@ -34,7 +34,7 @@ export default function initUsersController(db) {
 
       res.send(likedItem);
     } catch (err) {
-      console.log(err);
+      console.log('====== addLikedItem ======\n', err);
     }
   };
 
@@ -44,15 +44,15 @@ export default function initUsersController(db) {
     try {
       const user = await db.User.findByPk(Number(userId));
       // const item = await db.Item.findByPk(Number(itemId));
+      // console.log('====== user: ====== \n', user.__proto__);
+      const itemRemoved = await user.removeItem(itemId);
+      // const userItemToDelete = await user.getItems({
+      //   where: {
+      //     id: Number(itemId),
+      //   },
+      // });
 
-      const userItemToDelete = await user.getItems({
-        where: {
-          id: Number(itemId),
-        },
-      });
-      await userItemToDelete.destroy();
-      console.log('====== userItemToDelete: --- \n', typeof userItemToDelete);
-      // res.send(deletedItem);
+      res.send(itemRemoved.toString());
     } catch (err) {
       console.log(err);
     }

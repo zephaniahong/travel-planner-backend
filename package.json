@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": ".eslintrc.js",
-    "scripts": {
-    "start": "NODE_ENV=production node ./app",
-    "test": "node test.js"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.mjs",
+    "watch": "nodemon index.mjs"
   },
   "repository": {
     "type": "git",
