@@ -4,7 +4,6 @@ export default function initUsersController(db) {
   const userTrips = async (req, res) => {
     const { userId } = req.params;
     try {
-      // Hard code user id = 1 for MVP.
       const trips = await db.Trip.findAll({
         where: {
           userId: Number(userId),
@@ -18,8 +17,9 @@ export default function initUsersController(db) {
   };
 
   const getLikedItems = async (req, res) => {
+    const { userId } = req.params;
     try {
-      const user = await db.User.findByPk(19);
+      const user = await db.User.findByPk(Number(userId));
       const likedItems = await user.getItems();
       res.send(likedItems);
     } catch (err) {
