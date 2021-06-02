@@ -47,7 +47,23 @@ export default function initItemsController(db) {
       console.log('====== getItems err =======\n', err);
     }
   };
+
+  const getTripItems = async (req, res) => {
+    const { tripId } = req.params;
+    try {
+      const items = await db.Item.findAll({
+        where: {
+          tripId: Number(tripId),
+        },
+      });
+
+      res.send(items);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return {
-    addItem, getItems,
+    addItem, getItems, getTripItems,
   };
 }

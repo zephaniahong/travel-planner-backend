@@ -12,7 +12,8 @@ export default function bindRoutes(app) {
   app.post('/createtrip', TripsController.newTrip); // create new trip
   app.get('/gettrips', TripsController.getTrips); // get all trips available
 
-  app.get('/get-items/:tripId/:userId', ItemsController.getItems); // get all items of a user
+  app.get('/get-trip-items/:tripId', ItemsController.getTripItems); // get all trip item specifc to tripId
+  app.get('/get-items/:tripId/:userId', ItemsController.getItems); // get all trip items of a user
   app.post('/add-item', ItemsController.addItem); // add single item
 
   app.post('/login', UsersController.login); // authenticate user
