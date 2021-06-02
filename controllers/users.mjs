@@ -29,6 +29,8 @@ export default function initUsersController(db) {
 
   const addLikedItem = async (req, res) => {
     const { itemId, userId } = req.params;
+    // const { userId } = req.cookies;
+
     try {
       const user = await db.User.findByPk(Number(userId));
       const item = await db.Item.findByPk(Number(itemId));
@@ -57,15 +59,18 @@ export default function initUsersController(db) {
 
   const login = async (req, res) => {
     const { email, password } = req.body;
+
     try {
       const user = await db.User.findOne({
         where: {
           email,
         },
       });
+
       const shaObj = new jsSHA('SHA-256', 'TEXT', { encoding: 'UTF8' });
       shaObj.update(password);
       console.log(shaObj.getHash('HEX'));
+
       if (user.password === shaObj.getHash('HEX')) {
         res.cookie('userId', user.id);
         res.sendStatus(200);

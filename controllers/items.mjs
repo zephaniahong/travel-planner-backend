@@ -21,6 +21,7 @@ export default function initItemsController(db) {
   const getItems = async (req, res) => {
     // userId being passed through is hardcoded as 19 (from store)
     const { tripId, userId } = req.params;
+
     try {
       const items = await db.Item.findAll({
         where: {
@@ -39,8 +40,6 @@ export default function initItemsController(db) {
           item.dataValues.liked = false;
         }
       });
-
-      console.log('userItems: ----- \n', items);
 
       res.send(items);
     } catch (err) {

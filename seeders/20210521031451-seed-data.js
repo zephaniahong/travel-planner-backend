@@ -236,22 +236,28 @@ module.exports = {
       created_at: new Date(),
       updated_at: new Date(),
     };
-    items.push(item1);
-    items.push(item2);
-    items.push(item3);
-    items.push(item4);
-    items.push(item5);
-    items.push(item6);
-    items.push(item7);
-    items.push(item8);
-    items.push(item9);
-    items.push(item10);
-    items.push(item11);
-    items.push(item12);
-    items.push(item13);
-    items.push(item14);
-    items.push(item15);
-    items.push(item16);
+    const item17 = {
+      trip_id: 7,
+      name: 'Tsurumi River Cycling Course',
+      address: 'Kozukuechō, Kohoku Ward, Yokohama, Kanagawa, Japan',
+      type: 'activities',
+      created_at: new Date(),
+      updated_at: new Date(),
+    };
+    const item18 = {
+      trip_id: 7,
+      name: 'Nottingham Train Station',
+      address: 'Carrington Street, Nottingham, UK',
+      type: 'activities',
+      created_at: new Date(),
+      updated_at: new Date(),
+    };
+
+    items.push(item1, item2, item3, item4, item5, item6, item7, item8, item9, item10);
+    items.push(item11, item12, item13, item14, item15, item16);
+    items.push(item17, item18);
+    //  item19, item20, item21, item22, item23
+
     await queryInterface.bulkInsert('items', items);
 
     // liked items
