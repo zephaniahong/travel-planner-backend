@@ -252,11 +252,50 @@ module.exports = {
       created_at: new Date(),
       updated_at: new Date(),
     };
+    const item19 = {
+      trip_id: 7,
+      name: 'Kiyomizu-dera',
+      address: '〒605-0862 Kyoto, Higashiyama Ward, Kiyomizu, 1丁目２９４, Japan',
+      type: 'sites',
+      created_at: new Date(),
+      updated_at: new Date(),
+    };
+    const item20 = {
+      trip_id: 7,
+      name: 'Ramen Atelier Nakiryū',
+      address: '2 Chome-34-4 Minami-Ōtsuka, Toshima City, Tokyo, Japan',
+      type: 'food',
+      created_at: new Date(),
+      updated_at: new Date(),
+    };
+    const item21 = {
+      trip_id: 7,
+      name: 'Burger King Osu',
+      address: '3 Chome-30-32 Osu, Naka Ward, Nagoya, Aichi, Japan',
+      type: 'food',
+      created_at: new Date(),
+      updated_at: new Date(),
+    };
+    const item22 = {
+      trip_id: 7,
+      name: 'Itsukushima Shrine',
+      address: 'Itsukushima Shrine, 1-1 Miyajimacho, Hatsukaichi, Hiroshima, Japan',
+      type: 'sites',
+      created_at: new Date(),
+      updated_at: new Date(),
+    };
+    const item23 = {
+      trip_id: 7,
+      name: 'Himeji Castle',
+      address: '68 Honmachi, Himeji, Hyogo 670-0012, Japan',
+      type: 'sites',
+      created_at: new Date(),
+      updated_at: new Date(),
+    };
 
     items.push(item1, item2, item3, item4, item5, item6, item7, item8, item9, item10);
     items.push(item11, item12, item13, item14, item15, item16);
-    items.push(item17, item18);
-    //  item19, item20, item21, item22, item23
+    items.push(item17, item18, item19, item20, item21, item22, item23);
 
     await queryInterface.bulkInsert('items', items);
 
